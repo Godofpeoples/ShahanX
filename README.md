@@ -12,7 +12,7 @@ TUIC⭐️ | ✅ | ✅ | ⏳ | ❌ | ❌ | ❌ | ✅ | ✅ | ✅
 Cisco⭐️ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ❌ | 
 Openvpn⭐️ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ | 
 Shadowsocks⭐️ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ✅ | ✅ | ✅ 
-Signbox⭐️ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ 
+Singbox⭐️ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ 
 WireGuard⭐️ | ✅ | ✅ | ✅ | ⏳ | ✅ | ⏳ | ✅ | ✅ |  ✅
 Xray |  |  |  |  |  |  |  |  |  
 # ShaHaN VPN Panel ( Multi Protocol )
