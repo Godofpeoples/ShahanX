@@ -522,6 +522,20 @@ apt install php8.1-sqlite3 -y
 rm -fr /var/log/shadowsocks.log
 sudo /etc/init.d/shadowsocks restart
 
+
+sudo tee /etc/sysctl.d/99-ssh-vpn-buffers.conf >/dev/null <<'EOF'
+net.core.rmem_default = 262144
+net.core.wmem_default = 262144
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_rmem = 4096 87380 16777216
+net.ipv4.tcp_wmem = 4096 65536 16777216
+EOF
+
+sudo sysctl --system
+
+
+
 clear
 printf "%s" "$(</var/www/html/shahan.txt)"
 
