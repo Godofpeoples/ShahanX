@@ -145,9 +145,6 @@ if [ -e "$file" ]; then
     echo ""
 else
 udpport=7300
-echo -e "\nPlease input UDPGW Port ."
-printf "Default Port is \e[33m${udpport}\e[0m, let it blank to use this Port: "
-read udpport
 fi
 
 
