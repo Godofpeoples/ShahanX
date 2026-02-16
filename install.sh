@@ -444,17 +444,10 @@ cat >  /var/www/html/index.html << ENDOFFILE
 ENDOFFILE
 fi
 
-
-if [ -e "/var/www/html/n.apk" ]; then
-    echo "napster file"
-else
-echo "1"
-#sudo wget -4 -O /var/www/html/n.apk https://my.uupload.ir/dl/4e5nRE6G &
-#wait
-fi
 rm -fr /var/www/html/h.apk
 
-
+sudo sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+systemctl restart apache2
 
 elif command -v yum >/dev/null; then
 echo "Only Ubuntu Supported"
