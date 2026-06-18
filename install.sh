@@ -66,9 +66,6 @@ sudo wget -q -4 -O /usr/local/bin/shahancheck https://raw.githubusercontent.com/
 wait
 sudo chmod a+rx /usr/local/bin/shahancheck
 clear
-sudo wget -q -4 -O /root/tls.sh.x https://github.com/HamedAp/Ssh-User-management/raw/main/tls.sh.x &
-wait
-sudo chmod a+rx /root/tls.sh.x
 sudo wget -q -4 -O /root/wg.sh.x https://shahanpanel.com/wg.sh.x &
 wait
 sudo chmod a+rx /root/wg.sh.x
@@ -161,7 +158,7 @@ update_install_info "${green}Update And Upgrade Finished $plain"
 apt update -y
 rm -fr /etc/php/7.4/apache2/conf.d/00-ioncube.ini
 sudo apt -y install software-properties-common
-sudo apt install ca-certificates apt-transport-https -y
+sudo apt install ca-certificates apt-transport-https qrencode -y
 apt install shc gcc -y
 
 echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
@@ -326,7 +323,7 @@ fi
 update_install_info "${green}Php Ioncube Installed $plain"
 
 Nethogs=$(nethogs -V)
-if [[ $Nethogs == *"version 0.8.7"* ]]; then
+if [[ $Nethogs == *"version 0.8.8"* ]]; then
   echo "Nethogs Is Installed :)"
 else
 bash <(curl -Ls https://raw.githubusercontent.com/HamedAp/Nethogs-Json/main/install.sh --ipv4)
@@ -452,7 +449,7 @@ fi
 
 
 cat >  /usr/local/bin/listen << ENDOFFILE
-sudo lsof -i -P -n | grep LISTEN
+sudo lsof -i -P -n | grep -E '(LISTEN|UDP.*:)'
 ENDOFFILE
 sudo chmod a+rx /usr/local/bin/listen
 
@@ -534,7 +531,7 @@ else
 echo -e "\n${Red_font_prefix}IonCube Is NOT Installed${Font_color_suffix}"
 fi
 Nethogs=$(nethogs -V)
-if [[ $Nethogs == *"version 0.8.7"* ]]; then
+if [[ $Nethogs == *"version 0.8.8"* ]]; then
   echo -e "\n${Green_font_prefix}Nethogs Is Installed${Font_color_suffix}"
 else
 echo -e "\n${Red_font_prefix}Nethogs Is NOT Installed${Font_color_suffix}"
